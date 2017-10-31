@@ -9,17 +9,24 @@
 </head>
 <body>
   <div ng-controller="taskController">
-    <form>
+    <form class="add">
       <input type="text" ng-model="tempInput">
-      <button ng-click="addNew()">add</button>
+      <button ng-click="addNewItem()">add</button>
     </form>
-    <table>
-      <tr ng-repeat="item in items"><td> {{ item }} </td><td><button ng-click="editItem(task)">edit</button></td>
-      <td><button ng-click="deleteItem(task)">delete</button></td></tr>
+    <table class="content">
+      <tr ng-repeat="item in items">
+        <td> {{ item }} </td>
+        <td><button ng-click="editItem(item)">edit</button></td>
+        <td><button ng-click="deleteItem(item)">delete</button></td>
+      </tr>
     </table>
+    <form class="edit" ng-show="showEdit">
+        <input type="text" ng-model="editInput">
+        <button ng-click="saveEdit()">save</button>
+    </form>
   </div>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
   <script src="app/task.js"></script>
 </body>
 </html>
