@@ -4,3 +4,8 @@
   text-align: center;
   margin: 5px auto;
 }
+
+.content tr>td:first-child {
+  width: 236px;
+  max-width: 236px;
+}
