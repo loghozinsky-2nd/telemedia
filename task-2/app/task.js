@@ -4,6 +4,7 @@ function taskController($scope) {
   $scope.items = [
     'Some Item', 'Another Item'
   ];
+  
   $scope.addNewItem = function(){
     if ($scope.tempInput){
       $scope.items.push($scope.tempInput);
@@ -12,6 +13,7 @@ function taskController($scope) {
       console.log('input is empty');
     }
   };
+
   $scope.editItem = function(item){
     var index = $scope.items.indexOf(item);
     $scope.showEdit = true;
@@ -22,7 +24,7 @@ function taskController($scope) {
       $scope.editInput = "";
     };
   };
-  
+
   $scope.deleteItem = function(item){
     var index = $scope.items.indexOf(item);
     $scope.items.splice(index, 1);
